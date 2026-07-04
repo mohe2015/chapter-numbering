@@ -1,4 +1,4 @@
-#let equation-numbering-func = state("equation-numbering-func", (..abc) => {
+#let equation-numbering-func = state("equation-numbering-func", (..) => {
   "SHOULD NEVER BE SHOWN"
 })
 
