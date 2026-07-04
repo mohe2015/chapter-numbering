@@ -66,7 +66,6 @@
 #show: style-equations
 
 #set math.equation(numbering: "(A)")
-#set math.equation(supplement: none)
 
 #set-equation-numbering("(A)")
 
@@ -75,6 +74,8 @@ $ 1 + 1 $ <test-1>
 #set heading(numbering: "1.1")
 
 $ 1 + 1 $ <test0>
+
+#set math.equation(supplement: none)
 
 #set-equation-numbering((location: none, heading-numbering: none, heading-nums: none, ..nums, ref: false) => {
   let subnumbering = numbering("1", ..nums)
