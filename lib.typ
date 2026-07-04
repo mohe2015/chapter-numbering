@@ -8,19 +8,20 @@
   equation-numbering-func.update(old => the-numbering)
 }
 
-#show heading: outer => {
-  if outer.level <= equation-heading-level.get() {
-    counter(math.equation).update(0)
-  }
-  outer
-}
-
 #let style-equations = it => {
+  show heading: outer => {
+    if outer.level <= equation-heading-level.get() {
+      counter(math.equation).update(0)
+    }
+    outer
+  }
+
   set math.equation(numbering: (..nums) => {
     equation-numbering-func.get()(location: here(), ..nums, ref: false)
   })
 
   show ref: it => {
+    // TODO supplement
     if it.element == none or it.element.func() != math.equation { return it }
     link(it.element.location(), equation-numbering-func.at(it.element.location())(location: it.element.location(), ..counter(math.equation).at(it.element.location()), ref: true))
   }
@@ -30,8 +31,6 @@
 #equation-heading-level.update(0)
 
 #show: style-equations
-
-#set math.equation(supplement: none)
 
 #set-equation-numbering((location: none, ..nums, ref: false) => "(A)")
 
