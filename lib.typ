@@ -62,7 +62,7 @@
 
 #show: style-equations
 
-#set-equation-numbering("fefeefs1sssssw")
+#set-equation-numbering("s1s")
 
 $ 1 + 1 $ <test-1>
 
