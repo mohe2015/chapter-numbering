@@ -50,7 +50,13 @@
     let heading-numbering = query(selector(heading).before(location)).last(default: (numbering: none)).numbering
     let heading-nums = counter(heading).at(location)
     let nums = counter(math.equation).at(location)
-    link(location, equation-numbering-func.at(location)(location: location, heading-numbering: heading-numbering, heading-nums: heading-nums, ..nums, ref: true))
+    let rendered = equation-numbering-func.at(location)(location: location, heading-numbering: heading-numbering, heading-nums: heading-nums, ..nums, ref: true)
+    let result = if it.element.supplement == [] {
+      rendered
+    } else {
+      [#it.element.supplement~#rendered]
+    }
+    link(location, result)
   }
   it
 }
@@ -58,6 +64,9 @@
 #equation-heading-level.update(0)
 
 #show: style-equations
+
+#set math.equation(numbering: "(A)")
+#set math.equation(supplement: none)
 
 #set-equation-numbering("(A)")
 
