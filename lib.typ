@@ -4,8 +4,35 @@
   "SHOULD NEVER BE SHOWN"
 })
 
+#let counting-symbols = "1aAiIαΑ一壹あいアイא가ㄱ*١۱१১ক①⓵"
+#let non-counting = "[^" + counting-symbols + "]"
+#let pattern = regex("^" + non-counting + "*(.*)" + non-counting + "*$")
+
+#let trim-numbering(s) = {
+  let m = s.match(pattern)
+  if m != none {
+    m.captures.at(0)
+  } else {
+    none
+  }
+}
+
+#let my-numbering(the-numbering) = {
+  if type(the-numbering) == str {
+    (location: none, heading-numbering: none, heading-nums: none, ..nums, ref: false) => {
+      if ref {
+        numbering(trim-numbering(the-numbering), ..nums)
+      } else {
+        numbering(the-numbering, ..nums)
+      }
+    }
+  } else {
+    the-numbering
+  }
+}
+
 #let set-equation-numbering(the-numbering) = {
-  equation-numbering-func.update(old => the-numbering)
+  equation-numbering-func.update(old => my-numbering(the-numbering))
 }
 
 #let style-equations = it => {
@@ -39,7 +66,7 @@
 
 #show: style-equations
 
-#set-equation-numbering((location: none, ..nums, ref: false) => "(A)")
+#set-equation-numbering("(A)")
 
 $ 1 + 1 $ <test-1>
 
