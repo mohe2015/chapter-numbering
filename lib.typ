@@ -106,10 +106,10 @@ $ 1 + 1 $ <test4>
 
 @test-1, @test0, @test1, @test2, @test3, @test4, @test5, @test6, @test7, @test8
 
-#set heading(numbering: "I.1")
+#set heading(numbering: "[I.1]")
 
 #set-equation-numbering((heading-numbering: none, heading-nums: none, ref: false, ..nums) => {
-  let subnumbering = my-numbering("A", ref: ref, ..nums)
+  let subnumbering = my-numbering("<A>", ref: ref, ..nums)
   let result = if heading-numbering == none {
     subnumbering
   } else {
