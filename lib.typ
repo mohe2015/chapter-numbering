@@ -65,8 +65,6 @@
 
 #show: style-equations
 
-#set math.equation(numbering: "(A)")
-
 #set-equation-numbering("(A)")
 
 $ 1 + 1 $ <test-1>
