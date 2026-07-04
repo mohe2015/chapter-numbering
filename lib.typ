@@ -10,22 +10,20 @@
 
 #let trim-numbering(s) = s.match(pattern).captures.at(0)
 
-#let my-numbering(the-numbering) = {
+#let my-numbering(the-numbering, heading-numbering: none, heading-nums: none, ..nums, ref: false) = {
   if type(the-numbering) == str {
-    (heading-numbering: none, heading-nums: none, ..nums, ref: false) => {
-      if ref {
-        numbering(trim-numbering(the-numbering), ..nums)
-      } else {
-        numbering(the-numbering, ..nums)
-      }
+    if ref {
+      numbering(trim-numbering(the-numbering), ..nums)
+    } else {
+      numbering(the-numbering, ..nums)
     }
   } else {
-    the-numbering
+    the-numbering(heading-numbering: heading-numbering, heading-nums: heading-nums, ..nums, ref: ref)
   }
 }
 
 #let set-equation-numbering(the-numbering) = {
-  equation-numbering-func.update(old => my-numbering(the-numbering))
+  equation-numbering-func.update(old => (heading-numbering: none, heading-nums: none, ..nums, ref: false) => my-numbering(the-numbering, heading-numbering: heading-numbering, heading-nums: heading-nums, ref: false))
 }
 
 #let style-equations = it => {
@@ -69,7 +67,7 @@
 
 $ 1 + 1 $ <test-1>
 
-#set heading(numbering: "1.1")
+#set heading(numbering: "(1.1)")
 
 $ 1 + 1 $ <test0>
 
@@ -80,7 +78,7 @@ $ 1 + 1 $ <test0>
   let result = if heading-numbering == none {
     subnumbering
   } else {
-    numbering(heading-numbering, ..heading-nums) + "." + subnumbering
+    my-numbering(heading-numbering, ..heading-nums, ref: ref) + "." + subnumbering
   }
   if ref {
     result
