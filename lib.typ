@@ -8,14 +8,7 @@
 #let non-counting = "[^" + counting-symbols + "]"
 #let pattern = regex("^" + non-counting + "*(.*?)" + non-counting + "*$")
 
-#let trim-numbering(s) = {
-  let m = s.match(pattern)
-  if m != none {
-    m.captures.at(0)
-  } else {
-    none
-  }
-}
+#let trim-numbering(s) = s.match(pattern).captures.at(0)
 
 #let my-numbering(the-numbering) = {
   if type(the-numbering) == str {
