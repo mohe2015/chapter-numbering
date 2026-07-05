@@ -13,7 +13,7 @@ cargo install --locked typstyle
 cargo install --git https://github.com/typst/package-check.git
 cargo install --git https://github.com/sjfhsjfh/typship.git
 
-typship login universe
+typship login universe # Currently Personal access tokens (classic) required
 
 export TYPST_PACKAGE_PATH=$PWD/packages
 typst-package-check check
