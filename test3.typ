@@ -5,7 +5,12 @@
   if location == none {
     location = here()
   }
-  counter(heading).display(at: location)
+  let heading-numbering = query(selector(heading).before(location)).last(default: (numbering: none)).numbering
+  if heading-numbering == none {
+    return "TODO"
+  }
+  let heading-nums = counter(heading).at(location)
+  numbering(heading-numbering, ..heading-nums)
 })
 
 #show ref: it => {
