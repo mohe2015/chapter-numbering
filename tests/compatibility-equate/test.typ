@@ -46,7 +46,7 @@ $ 1 + 1 $ <eq1-1>
 $ 1 + 1 #<eq1-2a> \ 2 + 2 #<eq1-2b> $ <eq1-2>
 #figure("F1.2", caption: "F1.2") <fig1-2>
 
-See @eq1-1, @eq1-2, @eq1-2a, @eq1-2b, @eq2-1, @eq2-2, @eq3-1, @eq3-2, @eq4-1, @eq4-2
+See @eq1-1, @eq1-2, @eq1-2a, @eq1-2b, @eq2-1, @eq2-2, @eq3-1, @eq3-2, @eq4-1, @eq4-2, @eq4-2a, @eq4-2b
 
 See @fig1-1, @s1-1-a, @s1-1-b, @fig1-2, @fig2-1, @fig2-2, @fig3-1, @fig3-2, @fig4-1, @s4-1-a, @s4-1-b, @fig4-2
 
@@ -59,7 +59,7 @@ $ 1 + 1 $ <eq2-1>
 $ 1 + 1 $ <eq2-2>
 #figure("F2.2", caption: "F2.2") <fig2-2>
 
-See @eq1-1, @eq1-2, @eq1-2a, @eq1-2b, @eq2-1, @eq2-2, @eq3-1, @eq3-2, @eq4-1, @eq4-2
+See @eq1-1, @eq1-2, @eq1-2a, @eq1-2b, @eq2-1, @eq2-2, @eq3-1, @eq3-2, @eq4-1, @eq4-2, @eq4-2a, @eq4-2b
 
 See @fig1-1, @s1-1-a, @s1-1-b, @fig1-2, @fig2-1, @fig2-2, @fig3-1, @fig3-2, @fig4-1, @s4-1-a, @s4-1-b, @fig4-2
 
@@ -99,7 +99,7 @@ $ 1 + 1 \ 2 + 2 $ <eq3-1>
 $ 1 + 1 $ <eq3-2>
 #figure("F3.2", caption: "F3.2") <fig3-2>
 
-See @eq1-1, @eq1-2, @eq1-2a, @eq1-2b, @eq2-1, @eq2-2, @eq3-1, @eq3-2, @eq4-1, @eq4-2
+See @eq1-1, @eq1-2, @eq1-2a, @eq1-2b, @eq2-1, @eq2-2, @eq3-1, @eq3-2, @eq4-1, @eq4-2, @eq4-2a, @eq4-2b
 
 See @fig1-1, @s1-1-a, @s1-1-b, @fig1-2, @fig2-1, @fig2-2, @fig3-1, @fig3-2, @fig4-1, @s4-1-a, @s4-1-b, @fig4-2
 
@@ -114,9 +114,9 @@ $ 1 + 1 $ <eq4-1>
   #figure("S4.1.b", caption: "S4.1.b", kind: "subfigure") <s4-1-b>
 ], caption: "F4.1") <fig4-1>
 == Subtitle
-$ 1 + 1 $ <eq4-2>
+$ 1 + 1 #<eq4-2a> \ 2 + 2 #<eq4-2b> $ <eq4-2>
 #figure("F4.2", caption: "F4.2") <fig4-2>
 
-See @eq1-1, @eq1-2, @eq1-2a, @eq1-2b, @eq2-1, @eq2-2, @eq3-1, @eq3-2, @eq4-1, @eq4-2
+See @eq1-1, @eq1-2, @eq1-2a, @eq1-2b, @eq2-1, @eq2-2, @eq3-1, @eq3-2, @eq4-1, @eq4-2, @eq4-2a, @eq4-2b
 
 See @fig1-1, @s1-1-a, @s1-1-b, @fig1-2, @fig2-1, @fig2-2, @fig3-1, @fig3-2, @fig4-1, @s4-1-a, @s4-1-b, @fig4-2
