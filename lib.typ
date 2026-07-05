@@ -60,7 +60,7 @@
     let here = here()
     let location = it.element.location()
     assert(here != location)
-    let rendered = counter(figure).display(patch-numbering(it.element.numbering, ref: true), at: location)
+    let rendered = it.element.counter.display(patch-numbering(it.element.numbering, ref: true), at: location)
     let result = if it.element.supplement == [] {
       rendered
     } else {

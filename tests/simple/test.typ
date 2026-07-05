@@ -10,20 +10,27 @@
   heading + my-numbering("(1)", ref: ref, ..nums)
 })
 
-#set figure(numbering: (ref: false, ..nums) => {
-  let heading = display(heading, ref: ref)
-  if heading != none {
-    heading += "."
-  }
-  heading + my-numbering("(1)", ref: ref, ..nums)
-})
-
 #show heading: it => {
   if it.level <= 1 {
     counter(math.equation).update(0)
-    counter(figure).update(0)
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(figure.where(kind: raw)).update(0)
   }
   it
+}
+
+#show figure.where(kind: image).or(figure.where(kind: table)).or(figure.where(kind: raw)): outer => {
+  counter(figure.where(kind: "subfigure")).update(0)
+
+  set figure(numbering: (ref: false, ..nums) => {
+    let heading = display(heading, ref: ref)
+    if heading != none {
+      heading += "."
+    }
+    heading + my-numbering("(1)", ref: ref, ..nums)
+  })
+  outer
 }
 
 = Test 1
