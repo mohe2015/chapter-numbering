@@ -10,11 +10,11 @@
   heading + my-numbering("(1)", ref: ref, ..nums)
 })
 
-#show heading: outer => {
-  if outer.level <= 1 {
+#show heading: it => {
+  if it.level <= 1 {
     counter(math.equation).update(0)
   }
-  outer
+  it
 }
 
 = Test 1
