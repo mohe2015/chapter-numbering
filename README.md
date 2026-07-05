@@ -10,4 +10,11 @@ See [example](tests/example/test.typ) and [equate example](tests/compatibility-e
 cargo install --locked typst-cli
 cargo install --locked tytanic
 cargo install --locked typstyle
+cargo install --git https://github.com/typst/package-check.git
+cargo install --locked typship
+
+typst-package-check check
+typstyle --check .
+tt run
+typship publish
 ```
