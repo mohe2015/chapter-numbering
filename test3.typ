@@ -5,6 +5,7 @@
   if location == none {
     location = here()
   }
+  // this technically doesn't get the #set value but only if a new heading starts but I think that is good enough
   let heading-numbering = query(selector(heading).before(location)).last(default: (numbering: none)).numbering
   if heading-numbering == none {
     return "TODO"
@@ -15,9 +16,11 @@
 
 #show ref: it => {
   if it.element == none or it.element.func() != math.equation { return it }
+  let here = here()
   let location = it.element.location()
+  assert(here != location)
   let nums = counter(math.equation).at(location)
-  let rendered = (math.equation.numbering)(..nums, location: location)
+  let rendered = (math.equation.numbering)(..nums)
   let result = if it.element.supplement == [] {
     rendered
   } else {
@@ -33,5 +36,7 @@
 $ 1 + 1 $ <test>
 
 #set heading(numbering: "a")
+
+= Abc
 
 @test
