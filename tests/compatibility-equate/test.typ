@@ -7,8 +7,6 @@
 #show: equate.with(sub-numbering: true, number-mode: "line")
 #show: numera(level: 1)
 
-#let sub-numbering-state = state("equate/sub-numbering", false)
-
 #set math.equation(numbering: (ref: false, ..nums) => {
   let heading = display-numbering(heading, ref: ref)
   if heading != none {
