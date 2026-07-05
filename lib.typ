@@ -41,7 +41,7 @@
 
 #let outer-figure-count() = query(selector(normal-figure).before(here())).last().counter.get()
 
-#let rules(level) = it => {
+#let rules(level: 0) = it => {
   show heading: it => {
     if it.level <= level {
       counter(math.equation).update(0)

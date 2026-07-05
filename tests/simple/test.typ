@@ -1,6 +1,6 @@
 #import "../../lib.typ": get-numbering, display, my-numbering, rules, normal-figure, outer-figure-count
 
-#show: rules(1)
+#show: rules(level: 1)
 
 #set math.equation(numbering: (ref: false, ..nums) => {
   let heading = display(heading, ref: ref)
