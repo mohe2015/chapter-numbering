@@ -12,7 +12,7 @@
 
 $ 1 + 1 $ <eq1>
 
-See <eq1>, <eq2>
+See @eq1, @eq2
 
 #set heading(numbering: "A")
 
@@ -20,4 +20,4 @@ See <eq1>, <eq2>
 
 $ 1 + 1 $ <eq2>
 
-See <eq1>, <eq2>
+See @eq1, @eq2
