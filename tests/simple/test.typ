@@ -1,6 +1,6 @@
 #import "../../lib.typ": get-numbering, display, my-numbering, rules, normal-figure
 
-#show: rules
+#show: rules(1)
 
 #set math.equation(numbering: (ref: false, ..nums) => {
   let heading = display(heading, ref: ref)
@@ -10,17 +10,6 @@
   heading + my-numbering("(1)", ref: ref, ..nums)
 })
 
-#show heading: it => {
-  if it.level <= 1 { // lib with helper
-    counter(math.equation).update(0)
-    counter(figure.where(kind: image)).update(0)
-    counter(figure.where(kind: table)).update(0)
-    counter(figure.where(kind: raw)).update(0)
-  }
-  it
-}
-
-// where selector helper
 #show normal-figure: set figure(numbering: (ref: false, ..nums) => {
   let heading = display(heading, ref: ref)
   if heading != none {

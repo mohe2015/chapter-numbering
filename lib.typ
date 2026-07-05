@@ -37,7 +37,18 @@
   counter(target).display(numbering)
 }
 
-#let rules(it) = {
+#let rules(level) = it => {
+  show heading: it => {
+    if it.level <= level {
+      counter(math.equation).update(0)
+      counter(figure.where(kind: image)).update(0)
+      counter(figure.where(kind: table)).update(0)
+      counter(figure.where(kind: raw)).update(0)
+    }
+    it
+  }
+
+  // TODO set outer supplement
   show figure.where(kind: "subfigure"): set figure(supplement: "Subfigure")
 
   // imitates default show rule with ref: true
