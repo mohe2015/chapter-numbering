@@ -1,5 +1,5 @@
 #import "@preview/equate:0.3.3": equate
-#import "../../lib.typ": (
+#import "@preview/numera:0.0.1": (
   display-numbering, get-numbering, my-numbering, normal-figure, numera,
   outer-figure-counter-value,
 )
