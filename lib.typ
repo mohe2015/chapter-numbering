@@ -95,6 +95,7 @@
 
   // equate compatibility for (ref: true) and correct location context
   // TODO upstream the display(at: ) as that should already fix quite a bit.
+  // or rather try refactoring upstream so the numbering function can retrieve this value.
   show ref: it => {
     if it.element == none { return it }
     if it.element.func() != figure { return it }
