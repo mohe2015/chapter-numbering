@@ -20,7 +20,7 @@
   let location = it.element.location()
   assert(here != location)
   let nums = counter(math.equation).at(location)
-  let rendered = (math.equation.numbering)(..nums)
+  let rendered = (math.equation.numbering)(..nums, location: location)
   let result = if it.element.supplement == [] {
     rendered
   } else {
