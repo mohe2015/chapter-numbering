@@ -78,6 +78,7 @@
   // imitates default show rule but passes (ref: true) to numbering
   show ref: it => {
     if it.element == none or it.element.func() != figure { return it }
+    if it.element.kind not in (image, table, raw, "subfigure") { return it }
     let here = here()
     let location = it.element.location()
     assert(here != location)
