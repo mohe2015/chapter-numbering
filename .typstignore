@@ -1,3 +1,5 @@
 ref
 tests/reasoning-*
 tests/issue-*
+packages
+.typstignore

@@ -12,12 +12,14 @@ cargo install --locked tytanic
 cargo install --locked typstyle
 cargo install --git https://github.com/typst/package-check.git
 cargo install --git https://github.com/sjfhsjfh/typship.git
-cargo install --git https://github.com/typst-community/utpm.git
+
+typship login universe
+
+utpm project publish
 
 export TYPST_PACKAGE_PATH=$PWD/packages
 typst-package-check check
 typstyle --check .
 tt run
-typship publish universe --dry-run
 typship publish universe
 ```
