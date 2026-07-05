@@ -18,9 +18,15 @@
   heading + my-numbering("(1)", ref: ref, ..nums)
 })
 
+= Test 1
+
+$ 1 + 1 $ <eq1-1>
+
+// hack as overriding subfigure numbering doesn't work yet
+#[
 #show normal-figure: outer => {
   // subfigures
-  set figure(numbering: (ref: false, ..nums) => {
+  show figure.where(kind: "subfigure"): set figure(numbering: (ref: false, ..nums) => {
     let heading = display(heading, ref: ref)
     if heading != none {
       heading += "."
@@ -30,15 +36,13 @@
 
   outer
 }
-
-= Test 1
-
-$ 1 + 1 $ <eq1-1>
 #figure([
   F1.1
   #figure("S1.1.a", caption: "S1.1.a", kind: "subfigure") <s1-1-a>
   #figure("S1.1.b", caption: "S1.1.b", kind: "subfigure") <s1-1-b>
 ], caption: "F1.1") <fig1-1>
+]
+
 == Subtitle
 $ 1 + 1 $ <eq1-2>
 #figure("F1.2", caption: "F1.2") <fig1-2>
@@ -60,6 +64,7 @@ See @eq1-1, @eq1-2, @eq2-1, @eq2-2, @eq3-1, @eq3-2, @eq4-1, @eq4-2
 
 See @fig1-1, @s1-1-a, @s1-1-b, @fig1-2, @fig2-1, @fig2-2, @fig3-1, @fig3-2, @fig4-1, @s4-1-a, @s4-1-b, @fig4-2
 
+
 #set math.equation(numbering: (ref: false, ..nums) => {
   let heading = display(heading, ref: ref)
   if heading != none {
@@ -76,11 +81,10 @@ See @fig1-1, @s1-1-a, @s1-1-b, @fig1-2, @fig2-1, @fig2-2, @fig3-1, @fig3-2, @fig
   heading + my-numbering("(1)", ref: ref, ..nums)
 })
 
-
 // TODO FIXME doesn't work
 #show normal-figure: outer => {
   // subfigures
-  set figure(numbering: (ref: false, ..nums) => {
+  show figure.where(kind: "subfigure"): set figure(numbering: (ref: false, ..nums) => {
     let heading = display(heading, ref: ref)
     if heading != none {
       heading += "."
