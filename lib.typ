@@ -70,3 +70,5 @@
   }
   it
 }
+
+#let normal-figure = figure.where(kind: image).or(figure.where(kind: table)).or(figure.where(kind: raw))

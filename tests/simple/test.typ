@@ -1,4 +1,4 @@
-#import "../../lib.typ": get-numbering, display, my-numbering, rules
+#import "../../lib.typ": get-numbering, display, my-numbering, rules, normal-figure
 
 #show: rules
 
@@ -21,7 +21,7 @@
 }
 
 // where selector helper
-#show figure.where(kind: image).or(figure.where(kind: table)).or(figure.where(kind: raw)): set figure(numbering: (ref: false, ..nums) => {
+#show normal-figure: set figure(numbering: (ref: false, ..nums) => {
   let heading = display(heading, ref: ref)
   if heading != none {
     heading += "."
@@ -29,7 +29,7 @@
   heading + my-numbering("(1)", ref: ref, ..nums)
 })
 
-#show figure.where(kind: image).or(figure.where(kind: table)).or(figure.where(kind: raw)): outer => {
+#show normal-figure: outer => {
   counter(figure.where(kind: "subfigure")).update(0) // lib
 
   show figure.where(kind: "subfigure"): set figure(numbering: (ref: false, ..nums) => {
