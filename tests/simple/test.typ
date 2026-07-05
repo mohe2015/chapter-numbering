@@ -16,7 +16,7 @@ $ 1 + 1 $ <eq1>
 
 See @eq1, @eq2
 
-#set heading(numbering: "A")
+#set heading(numbering: "[A]")
 
 = Appendix
 
