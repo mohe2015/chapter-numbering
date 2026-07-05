@@ -11,7 +11,7 @@
 })
 
 #show heading: it => {
-  if it.level <= 1 {
+  if it.level <= 1 { // lib with helper
     counter(math.equation).update(0)
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
@@ -20,6 +20,7 @@
   it
 }
 
+// where selector helper
 #show figure.where(kind: image).or(figure.where(kind: table)).or(figure.where(kind: raw)): set figure(numbering: (ref: false, ..nums) => {
   let heading = display(heading, ref: ref)
   if heading != none {
@@ -29,7 +30,7 @@
 })
 
 #show figure.where(kind: image).or(figure.where(kind: table)).or(figure.where(kind: raw)): outer => {
-  counter(figure.where(kind: "subfigure")).update(0)
+  counter(figure.where(kind: "subfigure")).update(0) // lib
 
   show figure.where(kind: "subfigure"): set figure(numbering: (ref: false, ..nums) => {
     let heading = display(heading, ref: ref)
