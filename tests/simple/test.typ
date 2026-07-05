@@ -21,6 +21,7 @@
 #show heading: it => {
   if it.level <= 1 {
     counter(math.equation).update(0)
+    counter(figure).update(0)
   }
   it
 }
