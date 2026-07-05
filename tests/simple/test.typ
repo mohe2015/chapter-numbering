@@ -29,14 +29,17 @@
 = Test 1
 
 $ 1 + 1 $ <eq1-1>
-#figure("F1.1", caption: "F1.1") <fig1-1>
+#figure([
+  F1.1
+  #figure("S1.1.a", caption: "S1.1.a", kind: "subfigure") <s1-1-a>
+], caption: "F1.1") <fig1-1>
 == Subtitle
 $ 1 + 1 $ <eq1-2>
 #figure("F1.2", caption: "F1.2") <fig1-2>
 
 See @eq1-1, @eq1-2, @eq2-1, @eq2-2, @eq3-1, @eq3-2, @eq4-1, @eq4-2
 
-See @fig1-1, @fig1-2, @fig2-1, @fig2-2, @fig3-1, @fig3-2, @fig4-1, @fig4-2
+See @fig1-1, @s1-1-a, @fig1-2, @fig2-1, @fig2-2, @fig3-1, @fig3-2, @fig4-1, @fig4-2
 
 #set heading(numbering: "[A.A]")
 

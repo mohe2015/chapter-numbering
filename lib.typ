@@ -38,6 +38,8 @@
 }
 
 #let rules(it) = {
+  show figure.where(kind: "subfigure"): set figure(supplement: "Subfigure")
+
   // imitates default show rule with ref: true
   show ref: it => {
     if it.element == none or it.element.func() != math.equation { return it }
