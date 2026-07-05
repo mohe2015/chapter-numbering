@@ -14,7 +14,7 @@
 
 $ 1 + 1 $ <eq1>
 
-See @eq1, @eq2
+See @eq1, @eq2, @eq3, @eq4
 
 #set heading(numbering: "[A]")
 
@@ -22,4 +22,26 @@ See @eq1, @eq2
 
 $ 1 + 1 $ <eq2>
 
-See @eq1, @eq2
+See @eq1, @eq2, @eq3, @eq4
+
+#set math.equation(numbering: (ref: false, ..nums) => {
+  let heading = display(heading, ref: ref)
+  if heading != none {
+    heading += "-"
+  }
+  heading + my-numbering("(1)", ref: ref, ..nums)
+})
+
+= Test 1
+
+$ 1 + 1 $ <eq3>
+
+See @eq1, @eq2, @eq3, @eq4
+
+#set heading(numbering: "[I]")
+
+= Appendix
+
+$ 1 + 1 $ <eq4>
+
+See @eq1, @eq2, @eq3, @eq4
