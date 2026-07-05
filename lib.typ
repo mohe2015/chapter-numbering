@@ -60,7 +60,7 @@
     outer
   }
 
-  // imitates default show rule with ref: true
+  // imitates default show rule but passes (ref: true) to numbering
   show ref: it => {
     if it.element == none or it.element.func() != math.equation { return it }
     let here = here()
@@ -75,6 +75,7 @@
     link(location, result)
   }
 
+  // imitates default show rule but passes (ref: true) to numbering
   show ref: it => {
     if it.element == none or it.element.func() != figure { return it }
     let here = here()
