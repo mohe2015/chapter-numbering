@@ -1,4 +1,4 @@
-// In a custom ref rule with display(at: it.element.location()), here() in numbering is the location of the element. But the style context is wrong.
+// The numbering should be able to detect whether it was called from an equation or ref context to render the numbering differently
 
 #set math.equation(numbering: (..nums) => {
   let here = here()
@@ -7,7 +7,7 @@
     return "too-early-layout-iteration"
   }
   assert(here == test.location())
-  heading.numbering
+  "OK"
 })
 
 #show ref: it => {

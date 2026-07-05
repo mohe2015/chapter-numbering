@@ -1,4 +1,4 @@
-// In the builtin ref rule, here() in numbering is the location of the element
+// In the builtin ref rule, here() in numbering is the location of the element. But the style context is wrong.
 
 #set math.equation(numbering: (..nums) => {
   let here = here()
@@ -7,7 +7,7 @@
     return "too-early-layout-iteration"
   }
   assert(here == test.location())
-  "OK"
+  heading.numbering
 })
 
 #set heading(numbering: "1")
