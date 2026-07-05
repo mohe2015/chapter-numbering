@@ -36,7 +36,7 @@
   )
 }
 
-#let display(target, ref: false) = {
+#let display-numbering(target, ref: false) = {
   let numbering = get-numbering(target, ref: ref)
   if numbering == none {
     return none
@@ -51,11 +51,11 @@
     .or(figure.where(kind: raw))
 )
 
-#let outer-figure-count() = (
+#let outer-figure-counter-value() = (
   query(selector(normal-figure).before(here())).last().counter.get()
 )
 
-#let rules(level: 0) = it => {
+#let numera(level: 0) = it => {
   show heading: it => {
     if it.level <= level {
       counter(math.equation).update(0)
