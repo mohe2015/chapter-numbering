@@ -59,6 +59,7 @@ See @fig1-1, @fig1-2, @fig2-1, @fig2-2, @fig3-1, @fig3-2, @fig4-1, @fig4-2
 })
 
 #set math.equation(supplement: "Eq")
+#set figure(supplement: "Fig")
 
 = Test 1
 
