@@ -1,3 +1,5 @@
+// only this way uses the correct numbering but we need to get the outer figure
+
 #show figure.where(kind: "subfigure"): set figure(numbering: (..nums) => {
   "X"
 })
