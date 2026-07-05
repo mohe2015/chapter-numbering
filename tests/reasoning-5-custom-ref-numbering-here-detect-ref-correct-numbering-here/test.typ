@@ -64,7 +64,7 @@ $ 1 + 1 $ <test2>
 
 @test1 <ref21> @test2 <ref22> @test3 <ref23>
 
-#set math.equation(numbering: ("I"))
+#set math.equation(numbering: "(I)")
 
 #set heading(numbering: "1")
 
