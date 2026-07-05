@@ -1,0 +1,23 @@
+name: Typst CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+      - name: Install cargo binstall
+        uses: cargo-bins/cargo-binstall@main
+      - name: Install Typst tooling (typstyle & tytanic)
+        run: cargo binstall tytanic typstyle
+      - name: Check formatting with typstyle
+        run: typstyle --check .
+      - name: Run regression tests with tytanic
+        run: tt run
